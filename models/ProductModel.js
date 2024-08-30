@@ -25,7 +25,7 @@ const AddProductSchema = new mongoose.Schema({
         min: 0,
         default: 0
     },
-    image: {
+    imageUrl: {
         type: String,
         required: false,
     },
@@ -36,12 +36,7 @@ const AddProductSchema = new mongoose.Schema({
     updatedAt: {
         type: Date,
         default: Date.now
-    },
-    admin:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Admin'
     }
-    
 });
 
 const Product = mongoose.model('Product', AddProductSchema);
