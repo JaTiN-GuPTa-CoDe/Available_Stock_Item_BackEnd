@@ -36,7 +36,12 @@ const AddProductSchema = new mongoose.Schema({
     updatedAt: {
         type: Date,
         default: Date.now
+    },
+    admin:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Admin'
     }
+    
 });
 
 const Product = mongoose.model('Product', AddProductSchema);

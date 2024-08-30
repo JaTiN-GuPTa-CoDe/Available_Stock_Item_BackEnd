@@ -36,6 +36,10 @@ const ShopOwnerSchema = new mongoose.Schema({
     },
     updated_at: {
         type: Date
+    },
+    admin:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Admin'
     }
 });
 
