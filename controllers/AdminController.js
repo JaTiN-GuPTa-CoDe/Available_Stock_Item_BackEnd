@@ -57,7 +57,7 @@ exports.addProduct = async (req, res) => {
             price,
             category,
             stock,
-            imageUrl: req.file ? req.file.filename : undefined,
+            image: req.file ? req.file.filename : undefined,
         });
         await product.save();
 
@@ -122,7 +122,7 @@ exports.updateProductById = async (req, res) => {
 
         // Update the image if a new one is provided
         if (req.file) {
-            product.imageUrl = req.file.filename;
+            product.image = req.file.filename;
         }
 
         // Save the updated product to the database
@@ -226,7 +226,7 @@ exports.loggedOut = (req, res) => {
         // Clear the cookie if it exists
         res.clearCookie("AdminToken")
             .status(200)
-            .json({ message: "Logged Out Successfully" });
+            .json({ message: "Admin Logged Out Successfully" });
     } else {
         res.status(400).json({ message: "No token found" });
     }

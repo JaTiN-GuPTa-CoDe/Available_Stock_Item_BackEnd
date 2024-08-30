@@ -6,6 +6,7 @@ const { dbConnect } = require('./config/db');
 require('dotenv').config();
 const adminRoutes = require('./routes/AdminRoutes');
 const shopOwnerRoutes = require('./routes/ShopOwnerRoutes');
+// const bookingRoutes =require('./routes/BookingRoutes')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use('/', express.static('./uploads'));
 
 app.use('/admin', adminRoutes);
 app.use('/shopowner', shopOwnerRoutes);
+// app.use('/booking', bookingRoutes);
 
 dbConnect();
 

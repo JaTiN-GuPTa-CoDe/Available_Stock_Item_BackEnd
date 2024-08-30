@@ -8,10 +8,10 @@ const {Authorization}= require('../middleware/Authorization');
 router.post('/signup', adminController.adminSignup);
 router.post('/login', adminController.adminLogin);
 
-router.post('/addproduct', upload.single('imageUrl'),Authorization,adminController.addProduct);
+router.post('/addproduct', upload.single('image'),Authorization,adminController.addProduct);
 router.get('/products', Authorization,adminController.getAllProducts);
 router.get('/products/:id', Authorization,adminController.getProductById);
-router.put('/updateproduct/:id', upload.single('imageUrl'),Authorization, adminController.updateProductById);
+router.put('/updateproduct/:id', upload.single('image'),Authorization, adminController.updateProductById);
 router.delete('/products/:id',Authorization, adminController.deleteProductById);
 
 router.get('/getallshopowner', Authorization,adminController.getAllShopOwners);

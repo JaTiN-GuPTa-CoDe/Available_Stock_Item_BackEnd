@@ -25,7 +25,7 @@ const AddProductSchema = new mongoose.Schema({
         min: 0,
         default: 0
     },
-    imageUrl: {
+    image: {
         type: String,
         required: false,
     },
@@ -38,5 +38,6 @@ const AddProductSchema = new mongoose.Schema({
         default: Date.now
     }
 });
-const Product=mongoose.model('Product',AddProductSchema);
-module.exports={Product}
+
+const Product = mongoose.model('Product', AddProductSchema);
+module.exports = { Product };

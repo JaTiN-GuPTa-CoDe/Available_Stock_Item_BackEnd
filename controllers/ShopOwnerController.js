@@ -66,7 +66,7 @@ exports.loggedOut = (req, res) => {
         // Clear the cookie if it exists
         res.clearCookie("ShopOwnerToken")
             .status(200)
-            .json({ message: "Logged Out Successfully" });
+            .json({ message: "ShopOwner Logged Out Successfully" });
     } else {
         res.status(400).json({ message: "No token found" });
     }
